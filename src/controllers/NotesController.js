@@ -60,8 +60,6 @@ class NotesController {
         };
       });
 
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-
       if (tagsInsert.length > 0) {
         await knex("tags").insert(tagsInsert);
       }
