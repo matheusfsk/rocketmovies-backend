@@ -17,6 +17,9 @@ class NotesController {
         "ficção",
         "romance",
         "ficção científica",
+        "drama",
+        "sexo",
+        "adulto",
       ];
 
       if (rating < 0 || rating > 5) {
@@ -56,6 +59,8 @@ class NotesController {
           user_id,
         };
       });
+
+      await new Promise((resolve) => setTimeout(resolve, 5000));
 
       if (tagsInsert.length > 0) {
         await knex("tags").insert(tagsInsert);
